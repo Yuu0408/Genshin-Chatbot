@@ -12,11 +12,11 @@ zeroshot_classifier = pipeline("zero-shot-classification", model="typeform/disti
 
 async def memory_process(labels=labels, zeroshot_classifier=zeroshot_classifier):
   def blocking_memory_process():
-    with open('data/memory.txt', 'r') as f:
+    with open('data/memory.txt', 'r', encoding='utf-8') as f:
       memories = f.readlines()
 
     if len(memories) >= 10:
-      with open('data/memory.txt', 'w') as f:
+      with open('data/memory.txt', 'w', encoding='utf-8') as f:
         f.write('')
 
       clean_lines = [line.strip() for line in memories]
@@ -41,14 +41,14 @@ async def memory_process(labels=labels, zeroshot_classifier=zeroshot_classifier)
       topic= topics['labels'][0]
       print("topic: ", topic)
 
-      with open(f"data/long_term_memory/{topic}.txt", 'a') as f:
+      with open(f"data/long_term_memory/{topic}.txt", 'a', encoding='utf-8') as f:
         f.write(summary)
 
   await asyncio.to_thread(blocking_memory_process)
 
 async def retrieve_information(labels=labels, zeroshot_classifier=zeroshot_classifier):
   inputs = []
-  with open('data/history.txt', 'r') as file:
+  with open('data/history.txt', 'r', encoding='utf-8') as file:
     lines = file.readlines()
   for i in range(1, len(lines)+1):
     if i == 4:
@@ -62,10 +62,10 @@ async def retrieve_information(labels=labels, zeroshot_classifier=zeroshot_class
   topic1, topic2 = topics['labels'][0], topics['labels'][1]
   print("Top related topics: ", topic1, ", ", topic2)
 
-  with open(f"data/long_term_memory/{topic1}.txt", 'r') as f:
+  with open(f"data/long_term_memory/{topic1}.txt", 'r', encoding='utf-8') as f:
     content1 = f.read()
 
-  with open(f"data/long_term_memory/{topic2}.txt", 'r') as f:
+  with open(f"data/long_term_memory/{topic2}.txt", 'r', encoding='utf-8') as f:
     content2 = f.read()
   
   retrieved_information = content1 + content2
@@ -73,16 +73,14 @@ async def retrieve_information(labels=labels, zeroshot_classifier=zeroshot_class
 
   return retrieved_information
 
-# asyncio.run(retrieve_information(labels, zeroshot_classifier))
-
 async def process_history():
-  with open('data/history.txt', 'r') as f:
+  with open('data/history.txt', 'r', encoding='utf-8') as f:
     lines = f.readlines()
   
   while len(lines) > 20:
     lines.pop(0)
 
   new_history = ''.join(lines)
-  with open('data/history.txt', 'w') as f:
+  with open('data/history.txt', 'w', encoding='utf-8') as f:
     f.write(new_history)
   

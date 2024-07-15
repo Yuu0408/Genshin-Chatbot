@@ -61,10 +61,10 @@ async def synthesize_speech(text, voice_id='Salli'):
     print(f"audio-to-text time: {end-start} seconds")
     return audio_path
 
-with open('data/character_description.txt', 'r') as f:
+with open('data/character_description.txt', 'r', encoding='utf-8') as f:
     character_description = f.read()
 
-with open('data/user_description.txt', 'r') as f:
+with open('data/user_description.txt', 'r', encoding='utf-8') as f:
     user_description = f.read()
 
 @app.route('/')
@@ -88,7 +88,7 @@ async def ws():
         with open('data/memory.txt', 'a', encoding='utf-8') as f:
             f.write(f'Yuu: {user_input}\n')
 
-        with open('data/history.txt', 'r') as f:
+        with open('data/history.txt', 'r', encoding='utf-8') as f:
             history = f.read()
         
         retrieved_information = await retrieve_information()
