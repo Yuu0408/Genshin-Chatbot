@@ -1,5 +1,4 @@
 Quart
-langchain-openai
 boto3
 transformers
 openai
