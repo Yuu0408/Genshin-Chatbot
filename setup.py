@@ -11,6 +11,4 @@ AWS_REGION = 'YOUR_AWS_REGION'
 YOUR_SWITCHBOT_TOKEN = 'YOUR_SWITCHBOT_TOKEN'
 
 # Replace 'YOUR_SWITCHBOT_CLIENT_SECRET' with your actual SwitchBot client secret.
-# Note: SwitchBot client secret is typically used for more secure applications and may not be necessary for all API uses.
-# If your application requires a client secret, ensure it is securely stored and not exposed in public code repositories.
 YOUR_SWITCHBOT_CLIENT_SECRET = 'YOUR_SWITCHBOT_CLIENT_SECRET'
