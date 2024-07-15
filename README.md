@@ -13,7 +13,7 @@ Emotion Detection: Classifies emotions in responses.
 
 # Setup
 ## 1. Configure API Keys:
-Fill in the required API keys in the setup.py file.
+Fill in the required API keys in the `setup.py` file.
 ## 2. Initialize SwitchBot Devices (if using SwitchBot API features):
 Run the following script to get the list of devices
 ```
