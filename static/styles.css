@@ -1,0 +1,171 @@
+/* styles.css */
+/* body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color:rgb(44, 44, 44);
+} */
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color:rgb(35, 36, 37);
+}
+
+/* Sidebar CSS */
+#sidebar {
+  width: 250px; /* Sidebar width */
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color:rgb(18, 18, 18);
+  overflow: auto; /* Makes it scrollable */
+  transition: left 0.3s ease; /* Change to 'left' to ensure smooth transition */
+  border-right: 1px solid #3b3b3b;
+}
+
+#main-content {
+  display: flex;        /* Use flexbox to allow child elements to be positioned flexibly */
+  flex-direction: column; /* Stack children vertically */
+  height: 100vh;       /* Make the main content fill the height of the viewport */
+  margin-left: 250px;  /* Adjust based on the sidebar width */
+  transition: margin-left 0.3s ease;
+}
+
+/* Use 'left' property to hide the sidebar off-screen */
+.sidebar-hidden {
+  left: -250px; /* Hide sidebar by moving it left */
+}
+
+.expanded {
+  margin-left: 0; /* Adjust main content when sidebar is hidden */
+}
+
+
+#toggle-sidebar {
+  position: absolute;  /* Positioning relative to the sidebar */
+  top: 5px;           /* Distance from the top of the sidebar */
+  left: 255px;         /* Distance from the right edge of the sidebar */
+  padding: 5px 10px;
+  background-color:rgb(114, 114, 114);
+  border:#fcfcfc;           /* Remove default border */
+  cursor: pointer;        /* Cursor appears as a pointer */
+  border-radius: 5px;     /* Optional: rounded corners for the button */
+  transition: left 0.3s ease; 
+}
+#list_title {
+  text-align:center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #5a5a5a;
+  list-style-type: none;
+  vertical-align: middle;
+  padding: 10px;
+  color:white;
+}
+
+#image-box {
+  height: 60px;
+  width: 170px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#image-box:hover {
+  background-color: #383434; /* Change this to your desired hover color */
+  color: white; /* Crgb(67, 66, 66)his to your desired hover text color */
+  transition-duration: 300ms;
+}
+
+#friends-list li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  list-style-type: none;
+  color: white;
+}
+
+#friends-list img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 50px;
+  vertical-align: middle;
+}
+
+/* Hidden state for the sidebar */
+.sidebar-hidden {
+  transform: translateX(-100%);
+}
+
+#main-content.expanded {
+  margin-left: 0;
+}
+
+#picture {
+  display: flex;
+  flex-direction: column;
+  height: 92%;
+}
+
+#chat-container {
+  margin-top: auto;    /* Pushes the chat container to the bottom of its parent container */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+#chat-history {
+  flex-grow: 1;
+  overflow-y: auto;
+  height: 30px;
+  padding: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  text-align:center;  
+  color:#ccc
+}
+
+#chat-input {
+  padding: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  background-color: rgb(44, 44, 44);
+  color:#ccc;
+  /* Add flex-grow property to make the input field take up remaining space */
+  flex-grow: 1;
+}
+
+#emotion-image {
+  height: 380px;
+  width: auto;
+  object-fit: contain;
+  align-self:center;
+  margin-top: 100px;
+}
+
+#start-button {
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  height: 45px;
+  /* Add width property to make the button smaller */
+  width: 100px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  text-align: center;
+  border-color: None;
+}
+
+/* Change the background and text color when hovering over the button */
+#start-button:hover {
+  background-color: #383838; /* Change this to your desired hover color */
+  color: white; /* Change this to your desired hover text color */
+}
+
