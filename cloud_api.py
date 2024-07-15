@@ -4,7 +4,6 @@ import hashlib
 import hmac
 import base64
 import aiohttp
-import requests
 from setup import YOUR_SWITCHBOT_TOKEN, YOUR_SWITCHBOT_CLIENT_SECRET
 
 TOKEN = YOUR_SWITCHBOT_TOKEN
