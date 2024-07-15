@@ -5,7 +5,7 @@ An advanced chatbot leveraging GPT-3.5, speech recognition, text-to-speech, and 
 - **Response Generation**: Utilizes OpenAI GPT-3.5 API for generating responses.
 - **Speech-to-Text**: Supports voice input.
 - **Text-to-Speech**: Generates speech output using AWS Polly.
-- **Emotion Detection**: Classifies emotions in responses.
+- **Sentiment Analysis**: Classifies emotions in responses.
 - **Emotion Images**: Illustrates the state of the LLM with images.
 - **Memory Architecture**: Manages current chat memory, short-term memory, and long-term memory for context-aware conversations.
 - **Information Retrieval**: Zero-shot classification for topic detection and information retrieval.
