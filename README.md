@@ -23,7 +23,7 @@ python get_devices.py
 # Usage
 ## 1. Run the Chatbot:
 ```
-python main.py
+python app.py
 ```
 
 ## 2. Interacting with the Chatbot:
