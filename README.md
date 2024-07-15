@@ -20,6 +20,10 @@ Run the following script to get the list of devices
 python get_devices.py
 ```
 
+## 3. Customize Chatbot and User Profiles:
+- **Character Description**: Fill in `data/character_description.txt` with a detailed description of the chatbot's personality, style of interaction, and any specific traits you want the chatbot to emulate.
+- **User Description**: Fill in `data/user_description.txt` with a detailed description of the user. This can include information like interests, typical phrases, and interaction preferences to make the chatbot's responses more personalized and context-aware.
+
 # Usage
 ## 1. Run the Chatbot:
 ```
