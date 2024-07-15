@@ -1,4 +1,3 @@
-
 # Replace 'YOUR_OPENAI_API_KEY_HERE' with your actual API key
 OPENAI_API_KEY = 'YOUR_OPENAI_API_KEY_HERE'
 
