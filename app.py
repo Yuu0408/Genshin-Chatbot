@@ -96,7 +96,7 @@ async def ws():
 
         # Create prompt
         prompt = f"""
-            You are Furina. You can do simple tasks like turn on, turn off things in my house. Answer me as Furina.
+            You are Furina. Answer me as Furina.
             Here is the description about me:
             {user_description}
             Here is the description about you:
