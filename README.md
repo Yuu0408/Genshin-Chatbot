@@ -1,4 +1,4 @@
-# Genshin Chat Bot
+# Genshin Chatbot
 An advanced chatbot leveraging GPT-3.5, speech recognition, text-to-speech, and a unique memory management system. This project demonstrates various NLP techniques and integrates task automation using the SwitchBot API.
 
 # Features
