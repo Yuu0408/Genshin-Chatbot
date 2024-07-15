@@ -2,14 +2,14 @@
 An advanced chatbot leveraging GPT-3.5, speech recognition, text-to-speech, and a unique memory management system. This project demonstrates various NLP techniques and integrates task automation using the SwitchBot API.
 
 # Features
-Response Generation: Utilizes GPT-3.5 API for generating responses.
-Speech-to-Text: Supports voice input.
-Text-to-Speech: Generates speech output using AWS Polly.
-Emotion Images: Illustrates the state of the LLM with images.
-Memory Architecture: Manages current chat memory, short-term memory, and long-term memory for context-aware conversations.
-Information Retrieval: Zero-shot classification for topic detection and information retrieval.
-Task Automation: Classifies tasks and executes them like turning on/off devices using the SwitchBot API.
-Emotion Detection: Classifies emotions in responses.
+Response Generation: Utilizes GPT-3.5 API for generating responses. 
+Speech-to-Text: Supports voice input. 
+Text-to-Speech: Generates speech output using AWS Polly. 
+Emotion Images: Illustrates the state of the LLM with images. 
+Memory Architecture: Manages current chat memory, short-term memory, and long-term memory for context-aware conversations. 
+Information Retrieval: Zero-shot classification for topic detection and information retrieval. 
+Task Automation: Classifies tasks and executes them like turning on/off devices using the SwitchBot API. 
+Emotion Detection: Classifies emotions in responses. 
 
 # Setup
 ## 1. Configure API Keys:
