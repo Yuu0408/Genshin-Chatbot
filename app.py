@@ -13,7 +13,6 @@ from helper import labels_to_emotions
 from memory_process import memory_process, retrieve_information, process_history
 from setup import OPENAI_API_KEY, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION
 
-# Replace 'YOUR_OPENAI_API_KEY_HERE' with your actual API key
 os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 
 
@@ -165,7 +164,7 @@ async def ws():
                 process_start = time.time() # Start time for emotion detection, text-to-speech process
                 # Emotion detection
                 predictions = await emotion_classify(chunk_message)
-                emotion = labels_to_emotions[predictions[0]['label']] # Emotions contains all emotions with corresponsing score. Get the emotion with the highest score
+                emotion = labels_to_emotions[predictions[0]['label']]
                 print(f"Emotion: {emotion}")
 
                 # Text-to-speech
