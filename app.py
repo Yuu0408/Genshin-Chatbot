@@ -82,10 +82,10 @@ async def ws():
         
         print(f"user input: {user_input}")
 
-        with open('data/history.txt', 'a') as f:
+        with open('data/history.txt', 'a', encoding='utf-8') as f:
             f.write(f'Me: {user_input}\n')
 
-        with open('data/memory.txt', 'a') as f:
+        with open('data/memory.txt', 'a', encoding='utf-8') as f:
             f.write(f'Yuu: {user_input}\n')
 
         with open('data/history.txt', 'r') as f:
@@ -194,10 +194,10 @@ async def ws():
 
         # Update the chat history and short term memory
         messages = ' '.join(messages_list)
-        with open('data/history.txt', 'a') as f:
+        with open('data/history.txt', 'a', encoding='utf-8') as f:
             f.write(f'You: {messages}\n')
 
-        with open('data/memory.txt', 'a') as f:
+        with open('data/memory.txt', 'a', encoding='utf-8') as f:
             f.write(f'Furina: {messages}\n')
 
         print(f"Message: {messages}")
