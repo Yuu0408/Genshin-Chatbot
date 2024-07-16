@@ -13,7 +13,8 @@ An advanced chatbot based on a character named Furina in the game Genshin Impact
 
 # Workflow Diagram
 You can view the detailed workflow diagram of the Genshin Chatbot project by opening the following PDF:
-[Workflow Diagram PDF](assets/workflow_diagram.pdf)
+[Workflow Diagram PDF](assets/workflow_diagram.pdf).
+
 This diagram provides a visual overview of how components interact, including data flow and integration points with external APIs like OpenAI and SwitchBot.
 
 # Setup
