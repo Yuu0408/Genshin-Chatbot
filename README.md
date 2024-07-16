@@ -21,7 +21,7 @@ This diagram provides a visual overview of how components interact, including da
 ## 1. Install Dependencies:
 Install the required dependencies:
 ```
-pip install -r requirements.txt  # Install dependencies
+pip install -r requirements.txt
 ```
 
 ## 2. Configure API Keys:
