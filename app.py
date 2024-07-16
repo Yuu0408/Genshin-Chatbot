@@ -100,7 +100,7 @@ async def ws():
             {user_description}
             Here is the description about you:
             {character_description}
-            Here is the information you can use if you need, when you don't know things related to the current conversation:
+            Here is the information you can use if you need, when you don't know anything related to the current conversation:
             {retrieved_information}
             Here is the chat history:
             % CHAT HISTORY:
