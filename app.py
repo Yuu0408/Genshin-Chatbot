@@ -61,10 +61,10 @@ async def synthesize_speech(text, voice_id='Salli'):
     print(f"audio-to-text time: {end-start} seconds")
     return audio_path
 
-with open('data/character_description.txt', 'r', encoding='utf-8') as f:
+with open('data/character_description.txt', 'r', encoding='utf-8', errors='ignore') as f:
     character_description = f.read()
 
-with open('data/user_description.txt', 'r', encoding='utf-8') as f:
+with open('data/user_description.txt', 'r', encoding='utf-8', errors='ignore') as f:
     user_description = f.read()
 
 @app.route('/')
@@ -82,13 +82,13 @@ async def ws():
         
         print(f"user input: {user_input}")
 
-        with open('data/history.txt', 'a', encoding='utf-8') as f:
+        with open('data/history.txt', 'a', encoding='utf-8', errors='ignore') as f:
             f.write(f'Me: {user_input}\n')
 
-        with open('data/memory.txt', 'a', encoding='utf-8') as f:
+        with open('data/memory.txt', 'a', encoding='utf-8', errors='ignore') as f:
             f.write(f'Yuu: {user_input}\n')
 
-        with open('data/history.txt', 'r', encoding='utf-8') as f:
+        with open('data/history.txt', 'r', encoding='utf-8', errors='ignore') as f:
             history = f.read()
         
         retrieved_information = await retrieve_information()
@@ -110,7 +110,7 @@ async def ws():
 
         # LLM generated response with stream
         response = client.chat.completions.create(
-            model='gpt-3.5-turbo',
+            model='gpt-4o-mini',
             messages=[
                 {"role": "system", "content": prompt},
                 {'role': 'user', 'content': user_input}
@@ -194,10 +194,10 @@ async def ws():
 
         # Update the chat history and short term memory
         messages = ' '.join(messages_list)
-        with open('data/history.txt', 'a', encoding='utf-8') as f:
+        with open('data/history.txt', 'a', encoding='utf-8', errors='ignore') as f:
             f.write(f'You: {messages}\n')
 
-        with open('data/memory.txt', 'a', encoding='utf-8') as f:
+        with open('data/memory.txt', 'a', encoding='utf-8', errors='ignore') as f:
             f.write(f'Furina: {messages}\n')
 
         print(f"Message: {messages}")
