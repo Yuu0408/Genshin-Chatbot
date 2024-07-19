@@ -1,8 +1,8 @@
 # Genshin Chatbot
-An advanced chatbot based on a character named Furina in the game Genshin Impact, leveraging GPT-3.5, speech recognition, text-to-speech, and a unique memory management system. This project demonstrates various NLP techniques and integrates task automation using the SwitchBot API.
+An advanced chatbot based on a character named Furina in the game Genshin Impact, leveraging GPT-4o-mini, speech recognition, text-to-speech, and a unique memory management system. This project demonstrates various NLP techniques and integrates task automation using the SwitchBot API.
 
 ## Features
-- **Response Generation**: Utilizes OpenAI GPT-3.5 API for generating responses.
+- **Response Generation**: Utilizes OpenAI GPT-4o-mini API for generating responses.
 - **Speech-to-Text**: Supports voice input.
 - **Text-to-Speech**: Generates speech output using AWS Polly.
 - **Sentiment Analysis**: Classifies emotions in responses.
