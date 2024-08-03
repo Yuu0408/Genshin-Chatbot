@@ -51,7 +51,7 @@ Me: of course, I have to plan the moves ahead
 Top related topics:  entertainment ,  relationships
 ```
 
-### 3. Chat History and Short Term Memory
+### 3. Chat History and Memory
 The `short_term_memory.txt` file stores the latest 10 messages exchanged between the user and the chatbot, while the `chat_history.txt` file keeps track of the last 20 messages in the conversation. This helps the chatbot provide relevant and coherent responses by understanding the ongoing context. When the `short_term_memory.txt` file reaches 10 messages, the conversation in it is summarized. The summary is then classified into the most relevant topic using a one-shot classification model, and stored in the corresponding topic file inside the `long_term_memory` folder. Here is an example conversation and the resulted process:
 
 ```
