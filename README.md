@@ -1,7 +1,7 @@
 # Genshin Chatbot
 An advanced chatbot based on a character named Furina in the game Genshin Impact, leveraging GPT-4o-mini, speech recognition, text-to-speech, and a unique memory management system. This project demonstrates various NLP techniques and integrates task automation using the SwitchBot API.
 
-# Features
+## Features
 - **Response Generation**: Utilizes OpenAI GPT-4o-mini API for generating responses.
 - **Speech-to-Text**: Supports voice input.
 - **Text-to-Speech**: Generates speech output using AWS Polly.
@@ -11,14 +11,14 @@ An advanced chatbot based on a character named Furina in the game Genshin Impact
 - **Information Retrieval**: Zero-shot classification for topic detection and information retrieval.
 - **Task Automation**: Classifies tasks and executes them like turning on/off devices using the SwitchBot API.
 
-# Workflow Diagram
+## Workflow Diagram
 You can view the detailed workflow diagram of the Genshin Chatbot project by opening the following PDF:
 [Workflow Diagram PDF](assets/workflow.pdf).
 
 This diagram provides a visual overview of how components interact, including data flow and integration points with external APIs like OpenAI and SwitchBot.
 
-# Demo
-## 1. Text and Voice Input
+## Demo
+### 1. Text and Voice Input
 Users can interact with the chatbot using both text input and voice input. The chatbot processes the user's queries and provides responses along with corresponding emotion images to convey its state. Here is an example of using text input:
 <br><br>
 <div align="center">
@@ -36,7 +36,7 @@ Here is an example of using voice input:
 </div>
 <br><br>
 
-## 2. Information Retrieval
+### 2. Information Retrieval
 There is a one shot classifier that analyzes the latest 3 messages between the user and the chatbot to identify the 2 most relevant topics. It then retrieves pertinent information from these topics inside the `long_term_memory` folder (which contains files for various topics such as relationships, technology, etc.), and incorporates it into the chatbot's response, enhancing the relevance and accuracy of the interaction. Here is an example of how information is retrieved:
 
 ```
@@ -51,7 +51,7 @@ Me: of course, I have to plan the moves ahead
 Top related topics:  entertainment ,  relationships
 ```
 
-## 3. Chat History and Short Term Memory
+### 3. Chat History and Short Term Memory
 The `short_term_memory.txt` file stores the latest 10 messages exchanged between the user and the chatbot, while the `chat_history.txt` file keeps track of the last 20 messages in the conversation. This helps the chatbot provide relevant and coherent responses by understanding the ongoing context. When the `short_term_memory.txt` file reaches 10 messages, the conversation in it is summarized. The summary is then classified into the most relevant topic using a one-shot classification model, and stored in the corresponding topic file inside the `long_term_memory` folder. Here is an example conversation and the resulted process:
 
 ```
@@ -86,7 +86,7 @@ of your life, and I would love to hear more about that connection!
 topic:  entertainment
 ```
 
-## 4. Task Execution
+### 4. Task Execution
 The chatbot can execute simple tasks based on user command. In this example, the chatbot receives a command to turn off the light and successfully performs the task, showcasing its capability to control smart devices.
 <br><br>
 <div align="center">
@@ -96,32 +96,32 @@ The chatbot can execute simple tasks based on user command. In this example, the
 </div>
 <br><br>
 
-# Setup
-## 1. Install Dependencies:
+## Setup
+### 1. Install Dependencies:
 Install the required dependencies:
 ```
 pip install -r requirements.txt
 ```
 
-## 2. Configure API Keys:
+### 2. Configure API Keys:
 Fill in the required API keys in the `setup.py` file.
 
-## 3. Initialize SwitchBot Devices (if using SwitchBot API features):
+### 3. Initialize SwitchBot Devices (if using SwitchBot API features):
 Run the following script to get the list of devices
 ```
 python get_devices.py
 ```
 
-## 4. Customize Chatbot and User Profiles:
+### 4. Customize Chatbot and User Profiles:
 - **Character Description**: Fill in `data/character_description.txt` with a detailed description of the chatbot's personality, style of interaction, and any specific traits you want the chatbot to emulate.
 - **User Description**: Fill in `data/user_description.txt` with a detailed description of the user. This can include information like interests, typical phrases, and interaction preferences to make the chatbot's responses more personalized and context-aware.
 
-# Usage
-## 1. Run the Chatbot:
+## Usage
+### 1. Run the Chatbot:
 ```
 python app.py
 ```
 
-## 2. Interacting with the Chatbot:
+### 2. Interacting with the Chatbot:
 You can interact with the chatbot through text input or speech input.
 The chatbot will generate responses and can also perform tasks if configured with the SwitchBot API.
