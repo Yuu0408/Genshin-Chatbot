@@ -18,19 +18,42 @@ You can view the detailed workflow diagram of the Genshin Chatbot project by ope
 This diagram provides a visual overview of how components interact, including data flow and integration points with external APIs like OpenAI and SwitchBot.
 
 # Demo
-Users can interact with the chatbot using both text input and voice input. The chatbot processes the user's queries and provides responses along with corresponding emotion images to convey its state.
-![Chat with Text Input](assets/text.gif)
-![Chat with Voice Input](assets/voice.gif)
+## 1. Text and Voice Input
+Users can interact with the chatbot using both text input and voice input. The chatbot processes the user's queries and provides responses along with corresponding emotion images to convey its state. Here is an example of using text input:
+<br><br>
+<div align="center">
+  <figure style="display: inline-block; text-align: center;">
+    <img src="assets/text.gif" alt="Chat with Text Input" >
+  </figure>
+</div>
+<br><br>
+Here is an example of using voice input:
+<br><br>
+<div align="center">
+  <figure style="display: inline-block; text-align: center;">
+    <img src="assets/voice.gif" alt="Chat with Voice Input">
+  </figure>
+</div>
+<br><br>
 
-There is a one shot classifier that analyzes the latest 3 messages between the user and the chatbot to identify the 2 most relevant topics. It then retrieves pertinent information from these topics inside the `long_term_memory` folder (which contains files for various topics such as relationships, technology, etc.), and incorporates it into the chatbot's response, enhancing the relevance and accuracy of the interaction.
-![Classification and Retrieval](assets/voice.gif)
+## 2. Information Retrieval
+There is a one shot classifier that analyzes the latest 3 messages between the user and the chatbot to identify the 2 most relevant topics. It then retrieves pertinent information from these topics inside the `long_term_memory` folder (which contains files for various topics such as relationships, technology, etc.), and incorporates it into the chatbot's response, enhancing the relevance and accuracy of the interaction. Here is an example of how information is retrieved:
 
+```
+user input: of course, I have to plan the moves ahead
+content to compare:
+Me: I just used the T spin technique
+You: Ah, the T-spin technique!  Such a clever move!  It really showcases your skill and strategic thinking.  I've heard that it 
+can be quite a game-changer in Tetris.  Did you find yourself planning several moves ahead, or did it come to you instinctively
+in the heat of the game?  I'm so curious to hear more about your gaming strategies!
+Me: of course, I have to plan the moves ahead
 
-![Short-Term Memory](path/to/short_term_memory_screenshot.png)
-The `short_term_memory.txt` file stores the latest 10 messages exchanged between the user and the chatbot, while the `chat_history.txt` file keeps track of the last 20 messages in the conversation. This helps the chatbot provide relevant and coherent responses by understanding the ongoing context.
+Top related topics:  entertainment ,  relationships
+```
 
+## 3. Chat History and Short Term Memory
+The `short_term_memory.txt` file stores the latest 10 messages exchanged between the user and the chatbot, while the `chat_history.txt` file keeps track of the last 20 messages in the conversation. This helps the chatbot provide relevant and coherent responses by understanding the ongoing context. When the `short_term_memory.txt` file reaches 10 messages, the conversation in it is summarized. The summary is then classified into the most relevant topic using a one-shot classification model, and stored in the corresponding topic file inside the `long_term_memory` folder. Here is an example conversation and the resulted process:
 
-When the `short_term_memory.txt` file reaches 10 messages, the conversation in it is summarized. The summary is then classified into the most relevant topic using a one-shot classification model, and stored in the corresponding topic file inside the `long_term_memory` folder. Here is the example conversation and the resulted process:
 ```
 Me: Hi there
 You: Hello!  It’s so lovely to hear from you.  How has your day been so far?
@@ -63,9 +86,10 @@ of your life, and I would love to hear more about that connection!
 topic:  entertainment
 ```
 
-
-![Task Execution](path/to/task_execution_demo.gif)
+## 4. Task Execution
 The chatbot can execute simple tasks based on user command. In this example, the chatbot receives a command to turn off the light and successfully performs the task, showcasing its capability to control smart devices.
+
+![Task Execution](assets/task_execution.mov)
 
 # Setup
 ## 1. Install Dependencies:
