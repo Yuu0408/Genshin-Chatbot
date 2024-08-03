@@ -91,13 +91,10 @@ The chatbot can execute simple tasks based on user command. In this example, the
 <br><br>
 <div align="center">
   <figure style="display: inline-block; text-align: center;">
-    <video width="700" controls>
-      <source src="assets/task_execution.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <figcaption>Task Execution</figcaption>
+    <img src="assets/task_execution.gif" alt="Task Execution">
   </figure>
 </div>
+<br><br>
 
 # Setup
 ## 1. Install Dependencies:
