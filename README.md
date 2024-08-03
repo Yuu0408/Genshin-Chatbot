@@ -91,7 +91,7 @@ The chatbot can execute simple tasks based on user command. In this example, the
 <br><br>
 <div align="center">
   <figure style="display: inline-block; text-align: center;">
-    <img src="assets/task_execution.gif" alt="Task Execution">
+    <img src="assets/task_execute.gif" alt="Task Execution">
   </figure>
 </div>
 <br><br>
