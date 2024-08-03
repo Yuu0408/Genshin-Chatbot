@@ -13,6 +13,13 @@ def get_device_id(device):
             return controller["deviceId"]
     return None
 
+def can_be_encoded_cp932(char):
+    try:
+        char.encode('cp932')
+        return True
+    except UnicodeEncodeError:
+        return False
+
 labels_to_emotions = {
   'LABEL_0': 'anger',
  'LABEL_1': 'disgust',

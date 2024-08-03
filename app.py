@@ -8,7 +8,7 @@ import glob
 from execute_task import classify_and_execute_task
 from openai import OpenAI
 import asyncio
-from helper import labels_to_emotions
+from helper import labels_to_emotions, can_be_encoded_cp932
 from memory_process import memory_process, retrieve_information, process_history
 from setup import OPENAI_API_KEY, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION
 
@@ -134,6 +134,8 @@ async def ws():
             token = chunk.choices[0].delta.content
             if token is not None:
                 # Handle unexpected generated text
+                if not can_be_encoded_cp932(token):
+                    continue
                 if '\n' in token:
                     token = token[0]
                 # Sometimes, the generated text contains *{action}*. We have to remove it

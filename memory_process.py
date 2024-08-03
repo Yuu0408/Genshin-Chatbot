@@ -26,7 +26,7 @@ async def memory_process(labels=labels, zeroshot_classifier=zeroshot_classifier)
       response = client.chat.completions.create(
         model='gpt-4o-mini',
         messages=[
-          {"role": "system", "content": """summarize this conversation as Furina, like what in the conversation Furina would remember (just write the summary, don't write any other things). Summerize the conversation as Furina, which mean you should summerize as you are Furina, and tell the story with 'I':
+          {"role": "system", "content": """summarize this conversation with the user as Furina, like what in the conversation Furina would remember, and tell the story with 'I' (just write the summary, don't write any other things).
           % THE CONVERSATION:"""},
           {"role": "user", "content": content}
         ],
@@ -56,7 +56,7 @@ async def retrieve_information(labels=labels, zeroshot_classifier=zeroshot_class
     inputs.insert(0, lines[-i])
   
   input = ''.join(inputs)
-  print("content to compare: ", input)
+  print("content to compare: \n", input)
 
   topics = zeroshot_classifier(input, candidate_labels=labels)
   topic1, topic2 = topics['labels'][0], topics['labels'][1]
