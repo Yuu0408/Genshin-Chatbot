@@ -89,7 +89,7 @@ topic:  entertainment
 ## 4. Task Execution
 The chatbot can execute simple tasks based on user command. In this example, the chatbot receives a command to turn off the light and successfully performs the task, showcasing its capability to control smart devices.
 
-![Task Execution](assets/task_execution.mov)
+![Task Execution](assets/task_execution.MOV)
 
 # Setup
 ## 1. Install Dependencies:
